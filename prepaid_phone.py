@@ -1,14 +1,6 @@
-class PrepaidPhoneLimitReached(Exception):
-    def __init__(self, msg):
-        self.__msg = msg
-    def __str__(self):
-        return self.__msg
-    
-class PrepaidPhoneEmptyAccount(Exception):
-    def __init__(self, msg):
-        self.__msg = msg
-    def __str__(self):
-        return self.__msg
+from connector import connection
+from exceptions import PrepaidPhoneEmptyAccount, PrepaidPhoneLimitReached, PrepaidPhoneMessageContent, PrepaidPhoneImageUrl
+
 
 class PrepaidPhone:
     def __init__(self, limit = 100):
@@ -35,8 +27,31 @@ class PrepaidPhone:
             print(e)
             self.add_to_limit(abs(self.limit))
             print(self.limit)
+            
+    def send_sms(self, message_content):
+        try:
+            if not type(message_content) == str:
+                raise PrepaidPhoneMessageContent("A message you want to send needs to be of type String")
+        except PrepaidPhoneMessageContent as e:
+            print(e)
+        else:
+            message = connection.post_sms(message_content)
+            print(message)
+            
+    def send_mms(self, message_content, image_url):
+        try:
+            if not type(message_content) == str:
+                raise PrepaidPhoneMessageContent("A message you want to send needs to be of type String")
+            if not type(image_url) == str:
+                raise PrepaidPhoneImageUrl("The image url needs to be a string too!")
+        except PrepaidPhoneMessageContent as e:
+            print(e)
+        except PrepaidPhoneImageUrl as e:
+            print(e)
+        else:
+            message = connection.post_mms(message_content, image_url)
+            print(message)
 
 prepaidphone = PrepaidPhone()
-prepaidphone.call(60)
-print("Make another call")
-prepaidphone.call(60)
+
+prepaidphone.send_mms('This is with image', 'https://i.pinimg.com/474x/22/50/d0/2250d0104b25d5e8bde46c462822f291.jpg')
