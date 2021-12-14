@@ -65,15 +65,11 @@ class PrepaidPhone:
         except PrepaidPhoneEmailContent as e:
             print(e)
         else:
-            message = connection_sendgrid.send(post_email(html_content, subject))
+            message = connection_sendgrid.post_email(subject, html_content)
             print(message)
             print(message.status_code)
             print(message.body)
             print(message.headers)
-            
-            
-            
-            
         
             
 
@@ -83,4 +79,4 @@ prepaidphone = PrepaidPhone()
 
 # prepaidphone.call()
 
-prepaidphone.send_email('<strong>and easy to do anywhere, even with Python</strong>', 'Sending with Twilio SendGrid is Fun')
+prepaidphone.send_email('Sending with Twilio SendGrid is Fun','<strong>and easy to do anywhere, even with Python</strong>')
