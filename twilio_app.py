@@ -7,23 +7,33 @@ class TwilioClient:
         
         self.client = client
 
-    def post_sms(self, message_body):
+    def post_sms(self, message_body, send_to=TEST_NUMBER):
         
         message = self.client.messages.create(
                         body=message_body,
                         from_=TWILIO_PHONE_NUMBER,
-                        to=TEST_NUMBER
+                        to=send_to
                     )
         return message
         
-    def post_mms(self, message_body, image_url):
+    def post_mms(self, message_body, image_url, send_to=TEST_NUMBER):
         
         message = self.client.messages.create(
                         body=message_body,
                         from_=TWILIO_PHONE_NUMBER,
                         media_url = [image_url],
-                        to=TEST_NUMBER
+                        to=send_to
                     )
+        
+        return message
+    
+    def create_call(self, call_to=TEST_NUMBER):
+        
+        message = self.client.calls.create(
+                        url='http://demo.twilio.com/docs/voice.xml',
+                        to=call_to,
+                        from_=TWILIO_PHONE_NUMBER
+        )
         
         return message
         

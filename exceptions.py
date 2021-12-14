@@ -21,3 +21,15 @@ class PrepaidPhoneImageUrl(Exception):
         self.__msg = msg
     def __str__(self):
         return self.__msg
+    
+class PrepaidPhoneEmailSubject(Exception):
+    def __init__(self, msg):
+        self.__msg = msg
+    def __str__(self):
+        return self.__msg
+    
+class PrepaidPhoneEmailContent(Exception):
+    def __init__(self, msg):
+        self.__msg = msg
+    def __str__(self):
+        return self.__msg
