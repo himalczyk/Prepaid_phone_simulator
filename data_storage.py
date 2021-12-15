@@ -1,0 +1,6 @@
+start_data = ['start', 'run', 'strat', 'star', 'statr', 'runn', 'play', 'go']
+sms_data = ['sms', 'ssm', 'message', 'text', 'ssms', 'smms', 'smms']
+mms_data = ['mms', 'msm', 'mmms', 'msmm']
+email_data = ['email', 'e-mail', 'mail']
+voice_data = ['voice', 'call', 'outbound', 'outgoind', 'phone', 'calling']
+exit_data = ['exit', 'close', 'ex', 'shut down', 'out','escape']
