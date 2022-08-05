@@ -1,3 +1,5 @@
+#to do, refactoring
+
 from os import close
 from prepaid_phone import PrepaidPhone
 from data_storage import sms_data, mms_data, voice_data, email_data, start_data, exit_data

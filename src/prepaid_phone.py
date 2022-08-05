@@ -1,3 +1,5 @@
+# to do refactoring
+
 from connector import connection_twilio, connection_sendgrid
 from exceptions import PrepaidPhoneEmptyAccount, PrepaidPhoneLimitReached, PrepaidPhoneMessageContent, PrepaidPhoneImageUrl, PrepaidPhoneEmailSubject, PrepaidPhoneEmailContent
 
