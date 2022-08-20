@@ -8,7 +8,7 @@ setup(
     author='himalczyk',
     author_email='himalczyk1@gmail.com',
     license='unlicense',
-    packages=['prepaid_phone_simulator'],
+    packages=['src'],
     install_requires=[
         'atomicwrites',
         'attrs',
