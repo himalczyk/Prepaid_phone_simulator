@@ -1,0 +1,37 @@
+from setuptools import setup
+
+setup(
+    name='prepaid_phone_simulator',
+    version='0.1',
+    description='Oldschool prepaid phone simulator CLI app',
+    url='https://github.com/himalczyk/Prepaid_phone_simulator',
+    author='himalczyk',
+    author_email='himalczyk1@gmail.com',
+    license='unlicense',
+    packages=['prepaid_phone_simulator'],
+    install_requires=[
+        'atomicwrites==1.4.1',
+        'attrs==22.1.0',
+        'certifi==2021.10.8',
+        'charset-normalizer==2.0.9',
+        'colorama==0.4.5',
+        'idna==3.3',
+        'iniconfig==1.1.1',
+        'packaging==21.3',
+        'pluggy==1.0.0',
+        'py==1.11.0',
+        'PyJWT==2.3.0',
+        'pyparsing==3.0.9',
+        'pytest==7.1.2',
+        'python-dotenv==0.19.2',
+        'python-http-client==3.3.7',
+        'pytz==2021.3',
+        'requests==2.26.0',
+        'sendgrid==6.9.7',
+        'starkbank-ecdsa==2.0.3',
+        'tomli==2.0.1',
+        'twilio==7.3.2',
+        'urllib3==1.26.7',
+    ],
+    zip_safe=False
+)

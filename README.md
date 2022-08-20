@@ -1,16 +1,15 @@
 # Prepaid_phone_simulator
 
-To run this program:
+This is a packaged small app.
 
-Just download the repository and use the command in terminal:
+You can just install it using:
 
-python run.py
-
-OOP/functional based/APIs
+```
+python -m pip install git+ssh//git@github.com/himalczyk/Prepaid_phone_simulator.git
+```
 
 Have fun with using an some time ago, normal way of calling.
 
 APIs:
 - Twilio
 - Twilio: SendGrid
-- PyTest
